@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShangchengshangpinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShangchengshangpinEntity" id="shangchengshangpinMap">
+        <result property="shangpinbianhao" column="shangpinbianhao"/>
+        <result property="shangpinmingcheng" column="shangpinmingcheng"/>
+        <result property="shangpinzhonglei" column="shangpinzhonglei"/>
+        <result property="shangpintupian" column="shangpintupian"/>
+        <result property="shengchanchangjia" column="shengchanchangjia"/>
+        <result property="pinpai" column="pinpai"/>
+        <result property="shangpinjianjie" column="shangpinjianjie"/>
+        <result property="shangjiazhanghao" column="shangjiazhanghao"/>
+        <result property="dianpuming" column="dianpuming"/>
+        <result property="onelimittimes" column="onelimittimes"/>
+        <result property="alllimittimes" column="alllimittimes"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="price" column="price"/>
+        <result property="vipprice" column="vipprice"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShangchengshangpinVO" >
+		SELECT * FROM shangchengshangpin  shangchengshangpin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShangchengshangpinVO" >
+		SELECT  shangchengshangpin.* FROM shangchengshangpin  shangchengshangpin 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShangchengshangpinView" >
+
+		SELECT  shangchengshangpin.* FROM shangchengshangpin  shangchengshangpin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShangchengshangpinView" >
+		SELECT * FROM shangchengshangpin  shangchengshangpin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
